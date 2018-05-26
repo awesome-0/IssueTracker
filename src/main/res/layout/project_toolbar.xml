@@ -10,25 +10,18 @@
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:id="@+id/issuesToolbar">
-                <EditText
-                    android:layout_width="match_parent"
-                    android:layout_marginRight="20dp"
-                    android:layout_height="match_parent"
-                    android:layout_centerInParent="true"
-                    android:layout_toLeftOf="@id/add"
-                    android:id="@+id/searchProject"
-                    android:background="@null"
+
                     />
                 <ImageView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:src="@drawable/ic_search"
+                    android:src="@drawable/ic_close"
                     android:layout_centerVertical="true"/>
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:id="@+id/add"
+                    android:id="@+id/create"
                     android:text="CREATE"
                     android:textSize="18sp"
                     android:textColor="@color/white"
