@@ -1,8 +1,10 @@
 package com.example.samuel.firestore;
 
+import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -14,6 +16,7 @@ public class ProjectFragment extends Fragment {
     public issuesInterface issuesInterface;
     private ImageView addProject;
     private EditText searchProject;
+    private static final String TAG = "ProjectFragment";
     public ProjectFragment() {
     }
 
@@ -30,13 +33,39 @@ public class ProjectFragment extends Fragment {
        addProject.setOnClickListener(new View.OnClickListener() {
            @Override
            public void onClick(View view) {
-               getActivity().startActivity(new Intent(getActivity(),NewProjectActivity.class));
+               Intent intent  =  new Intent(getActivity(),NewProjectActivity.class);
+             //  intent.putExtra("","");
+               startActivityForResult(intent,Consts.ADDED_PROJECT_SUCCESS);
            }
        });
 
-
-
        return  view;
+
+    }
+
+
+    @Override
+    public void onActivityResult(int requestCode, int resultCode, Intent data) {
+        Log.d(TAG, "onActivityResult: result code is " + resultCode);
+        if(resultCode == Consts.ADDED_PROJECT_SUCCESS){
+            Log.d(TAG, "onActivityResult: success adding result");
+            issuesInterface.buildSnackBarMessage("build success");
+        }
+
+        super.onActivityResult(requestCode, resultCode, data);
+    }
+
+    @Override
+    public void onAttach(Context context) {
+        super.onAttach(context);
+       try{
+           issuesInterface = (issuesInterface) getActivity();
+       }
+       catch (ClassCastException e){
+           e.printStackTrace();
+       }
+
+
 
     }
 }

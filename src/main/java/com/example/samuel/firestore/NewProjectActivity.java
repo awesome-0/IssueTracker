@@ -30,12 +30,14 @@ private TextView create;
         create.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                project_title = getProjectTitle.getEditText().getText().toString();
-                project_Desc = getProjectDesc.getEditText().getText().toString();
-                Intent intent = new Intent(NewProjectActivity.this, IssueActivity.class);
-                intent.putExtra("stuff",project_title);
-                Log.d(TAG, "onClick: word is " + project_title);
-                startActivity(intent);
+                setResult(Consts.ADDED_PROJECT_SUCCESS);
+                finish();
+//                project_title = getProjectTitle.getEditText().getText().toString();
+//                project_Desc = getProjectDesc.getEditText().getText().toString();
+//                Intent intent = new Intent(NewProjectActivity.this, IssueActivity.class);
+//                intent.putExtra("stuff",project_title);
+//                Log.d(TAG, "onClick: word is " + project_title);
+//                startActivity(intent);
 
             }
         });
