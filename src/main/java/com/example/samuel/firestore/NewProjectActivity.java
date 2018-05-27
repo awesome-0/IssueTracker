@@ -47,6 +47,7 @@ private TextView create;
        // dialog = new ProgressDialog(this);
         layout = findViewById(R.id.layout);
         progressBar = new ProgressBar(this,null,android.R.attr.progressBarStyleLarge);
+       // progressBar.
         RelativeLayout.LayoutParams params = new RelativeLayout.LayoutParams(100,100);
         params.addRule(RelativeLayout.CENTER_IN_PARENT);
         layout.addView(progressBar,params);
@@ -73,7 +74,7 @@ private TextView create;
                     create.setEnabled(false);
                     Log.d(TAG, "onClick: create button tapped");
                     if(progressBar != null){
-                        progressBar.setVisibility(View.VISIBLE);
+                       showProgressBar();
                        // getWindow().setFlags(WindowManager.LayoutParams.FLAG_NOT_TOUCHABLE,WindowManager.LayoutParams.FLAG_NOT_TOUCHABLE);
 
                     }
@@ -98,7 +99,10 @@ private TextView create;
                     newProjectReference.set(project).addOnCompleteListener(new OnCompleteListener<Void>() {
                         @Override
                         public void onComplete(@NonNull Task<Void> task) {
-                            progressBar.setVisibility(View.GONE);
+                            if(progressBar != null){
+                                hideProgressBar();
+                            }
+
                             create.setEnabled(true);
                           //  getWindow().clearFlags(WindowManager.LayoutParams.FLAG_NOT_TOUCHABLE);
 
@@ -121,5 +125,14 @@ private TextView create;
 
             }
         });
+    }
+
+    private void showProgressBar(){
+        progressBar.setVisibility(View.VISIBLE);
+        getWindow().setFlags(WindowManager.LayoutParams.FLAG_NOT_TOUCHABLE,WindowManager.LayoutParams.FLAG_NOT_TOUCHABLE);
+    }
+    private void hideProgressBar(){
+        progressBar.setVisibility(View.GONE);
+        getWindow().clearFlags(WindowManager.LayoutParams.FLAG_NOT_TOUCHABLE);
     }
 }

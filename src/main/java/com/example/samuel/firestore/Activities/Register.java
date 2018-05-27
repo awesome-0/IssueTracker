@@ -56,6 +56,7 @@ public class Register extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 register_btn.setEnabled(false);
+                showProgressBar();
 
                 getDetails();
             }
@@ -70,13 +71,20 @@ public class Register extends AppCompatActivity {
 
         } else {
 //            layout.setVisibility(View.VISIBLE);
-           progressBar.setVisibility(View.VISIBLE);
-           getWindow().setFlags(WindowManager.LayoutParams.FLAG_NOT_TOUCHABLE,WindowManager.LayoutParams.FLAG_NOT_TOUCHABLE);
+
             registerUser(email, password, fullname);
 
         }
 
 
+    }
+    private void showProgressBar(){
+        progressBar.setVisibility(View.VISIBLE);
+        getWindow().setFlags(WindowManager.LayoutParams.FLAG_NOT_TOUCHABLE,WindowManager.LayoutParams.FLAG_NOT_TOUCHABLE);
+    }
+    private void hideProgressBar(){
+        progressBar.setVisibility(View.GONE);
+        getWindow().clearFlags(WindowManager.LayoutParams.FLAG_NOT_TOUCHABLE);
     }
 
     private void registerUser(String email, String password, String fullname) {
@@ -85,8 +93,7 @@ public class Register extends AppCompatActivity {
             @Override
             public void onComplete(@NonNull Task<AuthResult> task) {
                // dialog.dismiss();
-                progressBar.setVisibility(View.GONE);
-                getWindow().clearFlags(WindowManager.LayoutParams.FLAG_NOT_TOUCHABLE);
+                hideProgressBar();
                 if(task.isSuccessful()){
                     Intent Home = new Intent(Register.this, MainActivity.class);
                     Home.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
