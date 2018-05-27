@@ -33,9 +33,9 @@
                                   </option>
                                   <option name="values">
                                     <map>
-                                      <entry key="outputName" value="ic_priority_high" />
+                                      <entry key="outputName" value="ic_priority_low" />
                                       <entry key="theme" value="CUSTOM" />
-                                      <entry key="themeColor" value="ff110a" />
+                                      <entry key="themeColor" value="00ff00" />
                                     </map>
                                   </option>
                                 </PersistentState>
