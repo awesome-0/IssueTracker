@@ -61,9 +61,10 @@
         <Spinner
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginLeft="70dp"
+            android:layout_marginLeft="20dp"
             android:id="@+id/task_spinner"
-            android:layout_marginTop="10dp">
+            android:layout_marginTop="10dp"
+            >
 
 
         </Spinner>
@@ -109,7 +110,7 @@
         <Spinner
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginLeft="70dp"
+            android:layout_marginLeft="20dp"
             android:id="@+id/priority_spinner"
             android:layout_marginTop="10dp">
 

@@ -42,6 +42,7 @@ public class IssueActivity extends AppCompatActivity implements issuesInterface 
 
     }
 
+
     @Override
     public void buildSnackBarMessage(String message) {
         Log.d(TAG, "buildSnackBarMessage: message received " + message);
