@@ -5,5 +5,8 @@
         android:id="@+id/issuse_Activity"
         android:title="Issues"
         />
+    <item
+        android:id="@+id/logout"
+        android:title="Log out"/>
 
 </menu>

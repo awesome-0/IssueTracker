@@ -37,6 +37,9 @@ public class MainActivity extends AppCompatActivity {
        if(id == R.id.issuse_Activity){
            startActivity(new Intent(this,IssueActivity.class));
        }
+       else {
+           startActivity(new Intent(this,Login.class));
+       }
         return super.onOptionsItemSelected(item);
     }
 }
