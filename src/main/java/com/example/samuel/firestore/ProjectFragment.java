@@ -47,12 +47,13 @@ public class ProjectFragment extends Fragment {
     @Override
     public void onActivityResult(int requestCode, int resultCode, Intent data) {
         Log.d(TAG, "onActivityResult: result code is " + resultCode);
-        if(resultCode == Consts.ADDED_PROJECT_SUCCESS){
-            Log.d(TAG, "onActivityResult: success adding result");
-            issuesInterface.buildSnackBarMessage(data.getStringExtra(getString(R.string.snackbar_message)));
-        }
-        else{
-            issuesInterface.buildSnackBarMessage(data.getStringExtra(getString(R.string.snackbar_message)));
+        if(data != null) {
+            if (resultCode == Consts.ADDED_PROJECT_SUCCESS ) {
+                Log.d(TAG, "onActivityResult: success adding result");
+                issuesInterface.buildSnackBarMessage(data.getStringExtra(getString(R.string.snackbar_message)));
+            } else {
+                issuesInterface.buildSnackBarMessage(data.getStringExtra(getString(R.string.snackbar_message)));
+            }
         }
 
         super.onActivityResult(requestCode, resultCode, data);

@@ -70,7 +70,7 @@ public class MainActivity extends AppCompatActivity {
            startActivity(new Intent(this,IssueActivity.class));
        }
        else {
-           startActivity(new Intent(this,Login.class));
+           mAuth.signOut();
        }
         return super.onOptionsItemSelected(item);
     }

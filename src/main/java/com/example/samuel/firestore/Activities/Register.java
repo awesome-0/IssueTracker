@@ -8,7 +8,9 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.text.TextUtils;
 import android.view.View;
+import android.view.WindowManager;
 import android.widget.Button;
+import android.widget.ProgressBar;
 import android.widget.RelativeLayout;
 import android.widget.Toast;
 
@@ -26,6 +28,7 @@ public class Register extends AppCompatActivity {
     private ProgressDialog dialog;
 
     private static final String TAG = "RegisterActivity";
+    private ProgressBar progressBar;
 
 
     @Override
@@ -35,6 +38,12 @@ public class Register extends AppCompatActivity {
         dialog = new ProgressDialog(this);
         mAuth = FirebaseAuth.getInstance();
         setUpwidgets();
+        layout = findViewById(R.id.layout);
+        progressBar = new ProgressBar(this,null,android.R.attr.progressBarStyleLarge);
+        RelativeLayout.LayoutParams params = new RelativeLayout.LayoutParams(100,100);
+        params.addRule(RelativeLayout.CENTER_IN_PARENT);
+        layout.addView(progressBar,params);
+        progressBar.setVisibility(View.INVISIBLE);
     }
 
     public void setUpwidgets() {
@@ -61,8 +70,8 @@ public class Register extends AppCompatActivity {
 
         } else {
 //            layout.setVisibility(View.VISIBLE);
-            dialog.setTitle("Registering User");
-            dialog.show();
+           progressBar.setVisibility(View.VISIBLE);
+           getWindow().setFlags(WindowManager.LayoutParams.FLAG_NOT_TOUCHABLE,WindowManager.LayoutParams.FLAG_NOT_TOUCHABLE);
             registerUser(email, password, fullname);
 
         }
@@ -75,7 +84,9 @@ public class Register extends AppCompatActivity {
         mAuth.createUserWithEmailAndPassword(email,password).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
             @Override
             public void onComplete(@NonNull Task<AuthResult> task) {
-                dialog.dismiss();
+               // dialog.dismiss();
+                progressBar.setVisibility(View.GONE);
+                getWindow().clearFlags(WindowManager.LayoutParams.FLAG_NOT_TOUCHABLE);
                 if(task.isSuccessful()){
                     Intent Home = new Intent(Register.this, MainActivity.class);
                     Home.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);

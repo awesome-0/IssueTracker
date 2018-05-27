@@ -9,8 +9,11 @@ import android.os.Bundle;
 import android.text.TextUtils;
 import android.util.Log;
 import android.view.View;
+import android.view.WindowManager;
 import android.widget.EditText;
 import android.widget.ImageView;
+import android.widget.ProgressBar;
+import android.widget.RelativeLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -31,6 +34,8 @@ private TextView create;
     private static final String TAG = "NewProjectActivity";
     private FirebaseFirestore db;
     private ProgressDialog dialog;
+    private RelativeLayout layout;
+    private ProgressBar progressBar;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -39,7 +44,15 @@ private TextView create;
         getProjectDesc = findViewById(R.id.project_desc);
         getProjectTitle = findViewById(R.id.project_name);
         create = findViewById(R.id.create);
-        dialog = new ProgressDialog(this);
+       // dialog = new ProgressDialog(this);
+        layout = findViewById(R.id.layout);
+        progressBar = new ProgressBar(this,null,android.R.attr.progressBarStyleLarge);
+        RelativeLayout.LayoutParams params = new RelativeLayout.LayoutParams(100,100);
+        params.addRule(RelativeLayout.CENTER_IN_PARENT);
+        layout.addView(progressBar,params);
+        progressBar.setVisibility(View.INVISIBLE);
+
+
 
 
         create.setOnClickListener(new View.OnClickListener() {
@@ -54,9 +67,17 @@ private TextView create;
 
                 }
                 else{
-                    dialog.setMessage("Adding Project...");
-                    dialog.setCanceledOnTouchOutside(false);
-                    dialog.show();
+//                    dialog.setMessage("Adding Project...");
+//                    dialog.setCanceledOnTouchOutside(false);
+//                    dialog.show();
+                    create.setEnabled(false);
+                    Log.d(TAG, "onClick: create button tapped");
+                    if(progressBar != null){
+                        progressBar.setVisibility(View.VISIBLE);
+                       // getWindow().setFlags(WindowManager.LayoutParams.FLAG_NOT_TOUCHABLE,WindowManager.LayoutParams.FLAG_NOT_TOUCHABLE);
+
+                    }
+
 //
                     String userId = FirebaseAuth.getInstance().getCurrentUser().getUid();
                     db = FirebaseFirestore.getInstance();
@@ -77,7 +98,9 @@ private TextView create;
                     newProjectReference.set(project).addOnCompleteListener(new OnCompleteListener<Void>() {
                         @Override
                         public void onComplete(@NonNull Task<Void> task) {
-                            dialog.dismiss();
+                            progressBar.setVisibility(View.GONE);
+                            create.setEnabled(true);
+                          //  getWindow().clearFlags(WindowManager.LayoutParams.FLAG_NOT_TOUCHABLE);
 
                             if(task.isSuccessful()){
                                 Intent intent = new Intent();
