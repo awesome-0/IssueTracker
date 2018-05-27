@@ -3,10 +3,10 @@
 
     <item
         android:id="@+id/issuse_Activity"
-        android:title="Issues"
+        android:name="Issues"
         />
     <item
         android:id="@+id/logout"
-        android:title="Log out"/>
+        android:name="Log out"/>
 
 </menu>
