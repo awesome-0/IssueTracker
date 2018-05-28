@@ -3,10 +3,12 @@ package com.example.samuel.firestore.models;
 import android.os.Parcel;
 import android.os.Parcelable;
 
+import com.google.firebase.firestore.IgnoreExtraProperties;
 import com.google.firebase.firestore.ServerTimestamp;
 
 import java.util.Date;
 
+@IgnoreExtraProperties
 public class Project implements Parcelable {
     private String name;
     private String description;

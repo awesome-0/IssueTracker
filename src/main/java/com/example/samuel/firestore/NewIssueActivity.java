@@ -5,12 +5,17 @@ import android.support.annotation.NonNull;
 import android.support.design.widget.TextInputLayout;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.text.Editable;
 import android.text.TextUtils;
+import android.text.TextWatcher;
 import android.util.Log;
+import android.view.MotionEvent;
 import android.view.View;
 import android.view.WindowManager;
 import android.view.inputmethod.InputMethodManager;
 import android.widget.AdapterView;
+import android.widget.ArrayAdapter;
+import android.widget.AutoCompleteTextView;
 import android.widget.ProgressBar;
 import android.widget.RelativeLayout;
 import android.widget.Spinner;
@@ -31,7 +36,7 @@ public class NewIssueActivity extends AppCompatActivity {
     TaskAdapter priorityAdapter;
     Spinner prioritySpinner;
     TextView create;
-    private TextInputLayout mAssignToProject;
+    private AutoCompleteTextView mAssignToProject;
     private TextInputLayout mSummary;
 
     private TextInputLayout mDescription;
@@ -51,6 +56,7 @@ public class NewIssueActivity extends AppCompatActivity {
 
 
         setUpWidgets();
+        setUpAdapterForAutoCompleteTextView();
         layout = findViewById(R.id.layout);
         progressBar = new ProgressBar(this,null,android.R.attr.progressBarStyleLarge);
         // progressBar.
@@ -116,12 +122,61 @@ public class NewIssueActivity extends AppCompatActivity {
             InputMethodManager imm = (InputMethodManager) getSystemService(INPUT_METHOD_SERVICE);
             imm.hideSoftInputFromWindow(getCurrentFocus().getWindowToken(),0);
 
+
+        }
+    }
+    private void setUpAdapterForAutoCompleteTextView(){
+        String[] items = {"hello","samuel","today"};
+        ArrayAdapter<String>adapter = new ArrayAdapter<String>(NewIssueActivity.this,android.R.layout.simple_list_item_1,items);
+        mAssignToProject.setAdapter(adapter);
+        mAssignToProject.setOnTouchListener(new View.OnTouchListener() {
+            @Override
+            public boolean onTouch(View view, MotionEvent motionEvent) {
+
+                showSoftKeyBoard(view);
+                mAssignToProject.showDropDown();
+                return true;
+            }
+        });
+
+        mAssignToProject.addTextChangedListener(new TextWatcher() {
+            @Override
+            public void beforeTextChanged(CharSequence charSequence, int i, int i1, int i2) {
+
+            }
+
+            @Override
+            public void onTextChanged(CharSequence charSequence, int i, int i1, int i2) {
+
+            }
+
+            @Override
+            public void afterTextChanged(Editable editable) {
+                if(editable.toString().equals("")){
+                    mAssignToProject.setError("Select a Project");
+                }else{
+                    mAssignToProject.setError(null);
+                }
+
+            }
+        });
+
+
+    }
+
+    private void showSoftKeyBoard(View view) {
+        if(getCurrentFocus() != null){
+            InputMethodManager imm = (InputMethodManager) getSystemService(INPUT_METHOD_SERVICE);
+            imm.showSoftInput(view,0);
+
+
         }
     }
 
+
     private void getIssueDetails() {
         hideKeyboard();
-        String assign_to_project = mAssignToProject.getEditText().getText().toString();
+        String assign_to_project = mAssignToProject.getText().toString();
         String summary = mSummary.getEditText().getText().toString();
         String desc = mDescription.getEditText().getText().toString();
 

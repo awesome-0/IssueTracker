@@ -45,21 +45,18 @@
             </android.support.v7.widget.Toolbar>
 
         </android.support.design.widget.AppBarLayout>
-        <android.support.design.widget.TextInputLayout
+        <AutoCompleteTextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:id="@+id/project_name"
             android:layout_marginTop="70dp"
+            android:hint="assign to Project"
             android:layout_marginLeft="10dp"
             android:layout_marginRight="30dp"
             >
 
-            <android.support.design.widget.TextInputEditText
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:hint="Assign to Project"
-                android:inputType="text"/>
-        </android.support.design.widget.TextInputLayout>
+
+        </AutoCompleteTextView>
         <Spinner
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
