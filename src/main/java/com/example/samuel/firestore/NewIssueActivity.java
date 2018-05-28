@@ -215,6 +215,7 @@ public class NewIssueActivity extends AppCompatActivity {
                 if (getCurrentFocus() != null) {
                     InputMethodManager imm = (InputMethodManager) getSystemService(INPUT_METHOD_SERVICE);
                     imm.showSoftInput(view, 0);
+                    getWindow().setSoftInputMode(WindowManager.LayoutParams.SOFT_INPUT_ADJUST_RESIZE);
 
 
                 }

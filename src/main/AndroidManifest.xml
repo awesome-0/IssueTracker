@@ -28,7 +28,8 @@
         <activity
             android:name=".Activities.Register"
             android:windowSoftInputMode="stateVisible|adjustPan" />
-        <activity android:name=".NewIssueActivity"></activity>
+        <activity android:name=".NewIssueActivity"
+            android:windowSoftInputMode="adjustResize"></activity>
     </application>
 
 </manifest>
