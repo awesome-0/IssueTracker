@@ -15,6 +15,7 @@ public class TaskAdapter extends ArrayAdapter<String> {
     private String [] spinnerTitles;
     Context context;
     int resource;
+   // int position = 0;
 
     public TaskAdapter(@NonNull Context context, int resource, int[] spinnerImages, String[] spinnerTitles) {
         super(context, resource);
@@ -27,6 +28,7 @@ public class TaskAdapter extends ArrayAdapter<String> {
     @NonNull
     @Override
     public View getView(int position, @Nullable View convertView, @NonNull ViewGroup parent) {
+     //   this.position = position;
         ViewHolder holder ;
         if(convertView == null){
             LayoutInflater inflater = (LayoutInflater) context.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
@@ -58,6 +60,9 @@ public class TaskAdapter extends ArrayAdapter<String> {
     }
 
 
+//    public String getSelectedText(){
+//      //  return spinnerTitles[position];
+//    }
 
     @Override
     public View getDropDownView(int position, @Nullable View convertView, @NonNull ViewGroup parent) {

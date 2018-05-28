@@ -10,6 +10,7 @@ import android.text.TextUtils;
 import android.util.Log;
 import android.view.View;
 import android.view.WindowManager;
+import android.view.inputmethod.InputMethodManager;
 import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.ProgressBar;
@@ -72,6 +73,7 @@ private TextView create;
 //                    dialog.setCanceledOnTouchOutside(false);
 //                    dialog.show();
                     create.setEnabled(false);
+                    hideKeyboard();
                     Log.d(TAG, "onClick: create button tapped");
                     if(progressBar != null){
                        showProgressBar();
@@ -125,6 +127,13 @@ private TextView create;
 
             }
         });
+    }
+    private void hideKeyboard(){
+        if(getCurrentFocus() != null){
+            InputMethodManager imm = (InputMethodManager) getSystemService(INPUT_METHOD_SERVICE);
+            imm.hideSoftInputFromWindow(getCurrentFocus().getWindowToken(),0);
+
+        }
     }
 
     private void showProgressBar(){

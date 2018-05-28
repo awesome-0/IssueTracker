@@ -1,9 +1,11 @@
 package com.example.samuel.firestore;
 
 
+import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -20,9 +22,11 @@ import com.example.samuel.firestore.models.IssuesSpinnerItems;
  * A simple {@link Fragment} subclass.
  */
 public class issuesFragment extends Fragment {
+    private static final String TAG = "issuesFragment";
 
 
     private ImageView textView;
+    private issuesInterface issuesInterface;
 
 
     public issuesFragment() {
@@ -40,7 +44,7 @@ public class issuesFragment extends Fragment {
             @Override
             public void onClick(View view) {
                 Intent intent = new Intent(getActivity(),NewIssueActivity.class);
-                getActivity().startActivityForResult(intent,Consts.ADDED_ISSUE_SUCCESS);
+                startActivityForResult(intent,Consts.ADDED_ISSUE_SUCCESS);
 
             }
         });
@@ -48,7 +52,29 @@ public class issuesFragment extends Fragment {
         return view;
     }
 
+    @Override
+    public void onActivityResult(int requestCode, int resultCode, Intent data) {
 
+        if(data != null) {
+            if (resultCode == Consts.ADDED_ISSUE_SUCCESS ) {
+                Log.d(TAG, "onActivityResult: success adding result");
+                issuesInterface.buildSnackBarMessage(data.getStringExtra(getString(R.string.snackbar_message)));
+            } else {
+                issuesInterface.buildSnackBarMessage(data.getStringExtra(getString(R.string.snackbar_message)));
+            }
+        }
+        super.onActivityResult(requestCode, resultCode, data);
+    }
 
+    @Override
+    public void onAttach(Context context) {
+        super.onAttach(context);
+        try{
+            issuesInterface = (issuesInterface)getActivity();
+        }
+        catch (ClassCastException e){
+            e.printStackTrace();
+        }
 
+    }
 }

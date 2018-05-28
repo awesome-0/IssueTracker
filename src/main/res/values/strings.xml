@@ -6,4 +6,8 @@
     <string name="snackbar_message">snackbar_message</string>
     <string name="project_created">Project Created</string>
     <string name="project_failed">Project Creation Failed</string>
+    <string name="created_issue">Issue Created</string>
+    <string name="issue_failed">Issue Creation Failed</string>
+    <string name="collection_project">Project</string>
+    <string name="issues_document">Issues</string>
 </resources>

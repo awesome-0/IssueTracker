@@ -40,6 +40,117 @@ public class Issue implements Parcelable {
         project_id = in.readString();
         time_reported = (Date)in.readSerializable();
     }
+
+    public Issue() {
+    }
+    public static int getPriorityInteger(String selectedPriority){
+        if(selectedPriority == HIGH){
+            return 3;
+        }else if(selectedPriority == MEDIUM){
+
+            return 2;
+        }
+        else {
+            return 1;
+        }
+    }
+
+    public String getSummary() {
+        return summary;
+    }
+
+    public void setSummary(String summary) {
+        this.summary = summary;
+    }
+
+    public String getStatus() {
+        return status;
+    }
+
+    public void setStatus(String status) {
+        this.status = status;
+    }
+
+    public String getDescription() {
+        return description;
+    }
+
+    public void setDescription(String description) {
+        this.description = description;
+    }
+
+    public int getPriority() {
+        return priority;
+    }
+
+    public void setPriority(int priority) {
+        this.priority = priority;
+    }
+
+    public String getIssue_type() {
+        return issue_type;
+    }
+
+    @Override
+    public String toString() {
+        return "Issue{" +
+                "summary='" + summary + '\'' +
+                ", status='" + status + '\'' +
+                ", description='" + description + '\'' +
+                ", priority=" + priority +
+                ", issue_type='" + issue_type + '\'' +
+                ", time_reported=" + " " +
+                ", reporter='" + reporter + '\'' +
+                ", assignee='" + " " + '\'' +
+                ", issue_id='" + issue_id + '\'' +
+                ", project_id='" + project_id + '\'' +
+                '}';
+    }
+
+    public void setIssue_type(String issue_type) {
+        this.issue_type = issue_type;
+    }
+
+    public Date getTime_reported() {
+        return time_reported;
+    }
+
+    public void setTime_reported(Date time_reported) {
+        this.time_reported = time_reported;
+    }
+
+    public String getReporter() {
+        return reporter;
+    }
+
+    public void setReporter(String reporter) {
+        this.reporter = reporter;
+    }
+
+    public String getAssignee() {
+        return assignee;
+    }
+
+    public void setAssignee(String assignee) {
+        this.assignee = assignee;
+    }
+
+    public String getIssue_id() {
+        return issue_id;
+    }
+
+    public void setIssue_id(String issue_id) {
+        this.issue_id = issue_id;
+    }
+
+    public String getProject_id() {
+        return project_id;
+    }
+
+    public void setProject_id(String project_id) {
+        this.project_id = project_id;
+    }
+
     public String getPriorityString(){
         if(priority == 1){
             return LOW;
