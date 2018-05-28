@@ -84,7 +84,7 @@ private TextView create;
 //
                     String userId = FirebaseAuth.getInstance().getCurrentUser().getUid();
                     db = FirebaseFirestore.getInstance();
-                    DocumentReference newProjectReference  = db.collection("Project").document();
+                    DocumentReference newProjectReference  = db.collection(getString(R.string.collection_project)).document();
 
 
                     Project project = new Project(

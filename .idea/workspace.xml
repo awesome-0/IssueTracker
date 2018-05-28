@@ -6,7 +6,7 @@
     </shared>
   </component>
   <component name="AndroidLogFilters">
-    <option name="TOOL_WINDOW_CUSTOM_FILTER" value="issues" />
+    <option name="TOOL_WINDOW_CUSTOM_FILTER" value="NewIss" />
     <option name="TOOL_WINDOW_LOG_LEVEL" value="debug" />
     <option name="TOOL_WINDOW_CONFIGURED_FILTER" value="Show only selected application" />
   </component>
@@ -14,8 +14,7 @@
     <list default="true" id="64e8eff9-8f66-43b0-a81e-871f45a538a7" name="Default" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/example/samuel/firestore/NewIssueActivity.java" afterPath="$PROJECT_DIR$/src/main/java/com/example/samuel/firestore/NewIssueActivity.java" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/samuel/firestore/models/Project.java" afterPath="$PROJECT_DIR$/src/main/java/com/example/samuel/firestore/models/Project.java" />
-      <change beforePath="$PROJECT_DIR$/src/main/res/layout/activity_new_issue.xml" afterPath="$PROJECT_DIR$/src/main/res/layout/activity_new_issue.xml" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/samuel/firestore/NewProjectActivity.java" afterPath="$PROJECT_DIR$/src/main/java/com/example/samuel/firestore/NewProjectActivity.java" />
     </list>
     <ignored path="$PROJECT_DIR$/build/classes/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -49,11 +48,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="activity_new_issue.xml" pinned="false" current-in-tab="true">
+      <file leaf-file-name="activity_new_issue.xml" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/res/layout/activity_new_issue.xml">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="289">
-              <caret line="56" column="0" lean-forward="true" selection-start-line="56" selection-start-column="0" selection-end-line="56" selection-end-column="0" />
+              <caret line="56" column="0" lean-forward="false" selection-start-line="56" selection-start-column="0" selection-end-line="56" selection-end-column="0" />
               <folding>
                 <element signature="e#3943#4132#0" expanded="false" />
               </folding>
@@ -64,27 +63,48 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="NewIssueActivity.java" pinned="false" current-in-tab="false">
+      <file leaf-file-name="NewIssueActivity.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/example/samuel/firestore/NewIssueActivity.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="240">
-              <caret line="137" column="28" lean-forward="true" selection-start-line="137" selection-start-column="28" selection-end-line="137" selection-end-column="28" />
+            <state relative-caret-position="342">
+              <caret line="104" column="21" lean-forward="false" selection-start-line="104" selection-start-column="21" selection-end-line="104" selection-end-column="21" />
               <folding>
-                <element signature="class#2942:3296" expanded="false" />
-                <element signature="class#3353:3811" expanded="false" />
-                <element signature="e#3848#4002#0" expanded="true" />
-                <element signature="e#4001#4002#0" expanded="true" />
-                <element signature="e#4825#4833#0" expanded="true" />
-                <element signature="e#4990#5256#0" expanded="true" />
-                <element signature="e#5255#5256#0" expanded="true" />
-                <element signature="e#6909#6947#0" expanded="true" />
-                <element signature="e#7001#7036#0" expanded="true" />
-                <element signature="e#7604#8649#0" expanded="true" />
-                <element signature="e#8122#8158#0" expanded="true" />
-                <element signature="e#8159#8192#0" expanded="true" />
-                <element signature="e#8421#8457#0" expanded="true" />
-                <element signature="e#8458#8490#0" expanded="true" />
-                <element signature="e#8648#8649#0" expanded="true" />
+                <element signature="e#3119#3157#0" expanded="true" />
+                <element signature="e#3214#4471#0" expanded="true" />
+                <element signature="e#4470#4471#0" expanded="true" />
+                <element signature="class#4698:5052" expanded="false" />
+                <element signature="e#5611#5765#0" expanded="true" />
+                <element signature="e#5764#5765#0" expanded="true" />
+                <element signature="e#6752#6760#0" expanded="true" />
+                <element signature="e#6935#7191#0" expanded="true" />
+                <element signature="e#7190#7191#0" expanded="true" />
+                <element signature="e#10199#10237#0" expanded="true" />
+                <element signature="e#10303#10338#0" expanded="true" />
+                <element signature="e#11038#12125#0" expanded="true" />
+                <element signature="e#11473#11509#0" expanded="true" />
+                <element signature="e#11511#11544#0" expanded="true" />
+                <element signature="e#11835#11871#0" expanded="true" />
+                <element signature="e#11873#11905#0" expanded="true" />
+                <element signature="e#12124#12125#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="NewProjectActivity.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/example/samuel/firestore/NewProjectActivity.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="384">
+              <caret line="86" column="107" lean-forward="false" selection-start-line="86" selection-start-column="107" selection-end-line="86" selection-end-column="107" />
+              <folding>
+                <element signature="e#2318#5462#0" expanded="true" />
+                <element signature="e#4205#5415#0" expanded="true" />
+                <element signature="e#4800#4836#0" expanded="true" />
+                <element signature="e#4837#4872#0" expanded="true" />
+                <element signature="e#5143#5179#0" expanded="true" />
+                <element signature="e#5180#5214#0" expanded="true" />
+                <element signature="e#5414#5415#0" expanded="true" />
+                <element signature="e#5461#5462#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -2167,15 +2187,15 @@
         <option value="$PROJECT_DIR$/src/main/java/com/example/samuel/firestore/models/Issue.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/example/samuel/firestore/Consts.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/example/samuel/firestore/issuesFragment.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/example/samuel/firestore/NewProjectActivity.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/example/samuel/firestore/models/Project.java" />
         <option value="$PROJECT_DIR$/src/main/res/layout/activity_new_project.xml" />
-        <option value="$PROJECT_DIR$/src/main/java/com/example/samuel/firestore/NewIssueActivity.java" />
         <option value="$PROJECT_DIR$/src/main/res/layout/activity_new_issue.xml" />
+        <option value="$PROJECT_DIR$/src/main/java/com/example/samuel/firestore/NewProjectActivity.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/example/samuel/firestore/NewIssueActivity.java" />
       </list>
     </option>
   </component>
-  <component name="ProjectFrameBounds" extendedState="7">
+  <component name="ProjectFrameBounds" extendedState="6">
     <option name="x" value="676" />
     <option name="y" value="60" />
     <option name="width" value="703" />
@@ -2481,7 +2501,7 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1382" height="752" extended-state="7" />
+    <frame x="-8" y="-8" width="1382" height="752" extended-state="6" />
     <editor active="true" />
     <layout>
       <window_info id="Android Profiler" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
@@ -2491,7 +2511,7 @@
       <window_info id="Logcat" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.5064935" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Build" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.29707792" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Build" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.29707792" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Device File Explorer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32980332" sideWeight="0.5064935" order="3" side_tool="true" content_ui="tabs" />
@@ -2499,7 +2519,7 @@
       <window_info id="Palette&#9;" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Image Layers" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Preview" active="true" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32980332" sideWeight="0.4935065" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32980332" sideWeight="0.4935065" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32954547" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32954547" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.36038962" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
@@ -2946,14 +2966,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/res/values/strings.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="85">
-          <caret line="5" column="18" lean-forward="false" selection-start-line="5" selection-start-column="18" selection-end-line="5" selection-end-column="18" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/example/samuel/firestore/Consts.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="85">
@@ -2991,14 +3003,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/example/samuel/firestore/NewProjectActivity.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="197">
-          <caret line="75" column="35" lean-forward="false" selection-start-line="75" selection-start-column="35" selection-end-line="75" selection-end-column="35" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/example/samuel/firestore/models/Project.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="68">
@@ -3018,34 +3022,10 @@
         <state />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/example/samuel/firestore/NewIssueActivity.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="240">
-          <caret line="137" column="28" lean-forward="true" selection-start-line="137" selection-start-column="28" selection-end-line="137" selection-end-column="28" />
-          <folding>
-            <element signature="class#2942:3296" expanded="false" />
-            <element signature="class#3353:3811" expanded="false" />
-            <element signature="e#3848#4002#0" expanded="true" />
-            <element signature="e#4001#4002#0" expanded="true" />
-            <element signature="e#4825#4833#0" expanded="true" />
-            <element signature="e#4990#5256#0" expanded="true" />
-            <element signature="e#5255#5256#0" expanded="true" />
-            <element signature="e#6909#6947#0" expanded="true" />
-            <element signature="e#7001#7036#0" expanded="true" />
-            <element signature="e#7604#8649#0" expanded="true" />
-            <element signature="e#8122#8158#0" expanded="true" />
-            <element signature="e#8159#8192#0" expanded="true" />
-            <element signature="e#8421#8457#0" expanded="true" />
-            <element signature="e#8458#8490#0" expanded="true" />
-            <element signature="e#8648#8649#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/res/layout/activity_new_issue.xml">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="289">
-          <caret line="56" column="0" lean-forward="true" selection-start-line="56" selection-start-column="0" selection-end-line="56" selection-end-column="0" />
+          <caret line="56" column="0" lean-forward="false" selection-start-line="56" selection-start-column="0" selection-end-line="56" selection-end-column="0" />
           <folding>
             <element signature="e#3943#4132#0" expanded="false" />
           </folding>
@@ -3053,6 +3033,57 @@
       </provider>
       <provider editor-type-id="android-designer2">
         <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/res/values/strings.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="170">
+          <caret line="10" column="18" lean-forward="false" selection-start-line="10" selection-start-column="18" selection-end-line="10" selection-end-column="18" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/example/samuel/firestore/NewProjectActivity.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="384">
+          <caret line="86" column="107" lean-forward="false" selection-start-line="86" selection-start-column="107" selection-end-line="86" selection-end-column="107" />
+          <folding>
+            <element signature="e#2318#5462#0" expanded="true" />
+            <element signature="e#4205#5415#0" expanded="true" />
+            <element signature="e#4800#4836#0" expanded="true" />
+            <element signature="e#4837#4872#0" expanded="true" />
+            <element signature="e#5143#5179#0" expanded="true" />
+            <element signature="e#5180#5214#0" expanded="true" />
+            <element signature="e#5414#5415#0" expanded="true" />
+            <element signature="e#5461#5462#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/example/samuel/firestore/NewIssueActivity.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="342">
+          <caret line="104" column="21" lean-forward="false" selection-start-line="104" selection-start-column="21" selection-end-line="104" selection-end-column="21" />
+          <folding>
+            <element signature="e#3119#3157#0" expanded="true" />
+            <element signature="e#3214#4471#0" expanded="true" />
+            <element signature="e#4470#4471#0" expanded="true" />
+            <element signature="class#4698:5052" expanded="false" />
+            <element signature="e#5611#5765#0" expanded="true" />
+            <element signature="e#5764#5765#0" expanded="true" />
+            <element signature="e#6752#6760#0" expanded="true" />
+            <element signature="e#6935#7191#0" expanded="true" />
+            <element signature="e#7190#7191#0" expanded="true" />
+            <element signature="e#10199#10237#0" expanded="true" />
+            <element signature="e#10303#10338#0" expanded="true" />
+            <element signature="e#11038#12125#0" expanded="true" />
+            <element signature="e#11473#11509#0" expanded="true" />
+            <element signature="e#11511#11544#0" expanded="true" />
+            <element signature="e#11835#11871#0" expanded="true" />
+            <element signature="e#11873#11905#0" expanded="true" />
+            <element signature="e#12124#12125#0" expanded="true" />
+          </folding>
+        </state>
       </provider>
     </entry>
   </component>
